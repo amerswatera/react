@@ -11,6 +11,7 @@ import LoginPage from "./pages/LoginPage";
 import NotFoundPage from "./pages/NotFoundPage";
 import QueryParams from "./pages/QueryParams";
 // import SignupPage from "./pages/SignupPage";
+import BusinessRegistration from "./pages/BusinessRegistration";
 const SignupPage = React.lazy(() => import("./pages/SignupPage"));
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
           {/* http://localhost:3000/signup */}
           <Route path="/signup" component={SignupPage} />
           {/* http://localhost:3000/cardspanel */}
+          <Route path="/biz-log" component={BusinessRegistration} />
           <AuthGuardRoute path="/cardspanel" component={CardsPanelPage} />
           <AuthGuardRoute path="/card/:id" component={CardInfoPage} />
           <Route path="/qparams" component={QueryParams} />
