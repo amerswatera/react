@@ -4,6 +4,8 @@ import { useLocation } from "react-router-dom";
 import axios from "axios";
 import CardComponent from "../components/CardComponent/CardComponent";
 
+import Footer from "../components/footerComponent/Footer";
+
 const CardsPanelPage = () => {
   const location = useLocation();
   const userInfoRedux = useSelector((state) => state.auth.userData);
@@ -36,6 +38,16 @@ const CardsPanelPage = () => {
           />
         );
       })}
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <Footer />
     </div>
   );
 };

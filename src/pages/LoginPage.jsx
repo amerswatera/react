@@ -6,6 +6,8 @@ import axios from "axios";
 import Joi from "joi-browser";
 import jwt_decode from "jwt-decode";
 
+import Footer from "../components/footerComponent/Footer";
+
 import loginSchema from "../validation/login.validation";
 import { authActions } from "../store/auth";
 
@@ -95,7 +97,6 @@ const LoginPage = () => {
       }
     }
   }, [location.state, handleOnSubmit]);
-
   useEffect(() => {
     memoizedCallback();
   }, [location.state, email, password, memoizedCallback]);
@@ -128,6 +129,7 @@ const LoginPage = () => {
           your password is: {password}
         </div>
       )}
+      <Footer></Footer>
     </form>
   );
 };

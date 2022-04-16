@@ -2,6 +2,7 @@ import { useState } from "react";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
 
+import Footer from "../components/footerComponent/Footer";
 const SignupPage = () => {
   const history = useHistory();
 
@@ -95,6 +96,7 @@ const SignupPage = () => {
       <button type="submit" className="btn btn-primary">
         Submit
       </button>
+      <Footer />
     </form>
   );
 };

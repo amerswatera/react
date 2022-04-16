@@ -2,6 +2,8 @@ import { useState } from "react";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
 
+import Footer from "../components/footerComponent/Footer";
+
 const BusinessRegistration = () => {
   const history = useHistory();
 
@@ -33,7 +35,7 @@ const BusinessRegistration = () => {
     ev.preventDefault();
     //add joi validation
     axios
-      .post("/cards/biz-log", { name, description, address, phone, image })
+      .post("/cards/cardspanel", { name, description, address, phone, image })
       .then((res) => {
         console.log("res.data", res.data);
         history.push("/cardspanel", {
@@ -90,25 +92,28 @@ const BusinessRegistration = () => {
         />
       </div>
       <div className="mb-3">
-        <label htmlFor="exampleInputPhone" className="form-label">
+        <label htmlFor="Phone" className="form-label">
           Phone
         </label>
         <input
-          type="phone"
+          type="tel"
+          id="phone"
           className="form-control"
-          id="exampleInputPhone"
-          onChange={handlePhoneChange}
-          value={phone}
+          placeholder="123-45-678"
+          required
         />
       </div>
       <div>
-        <label htmlFor="exampleInputImage" className="form-label"></label>
-        <input
+        <label htmlFor="exampleInputImage" className="form-label">
+          {" "}
+          choose file
+        </label>
+        <img
           type="link"
-          className="form-control"
-          id="exampleInputImage"
+          id="avatar"
+          className="avatar"
+          accept="image/png, image/jpeg "
           onChange={handleImageChange}
-          value={image}
         />
       </div>
 
@@ -117,6 +122,7 @@ const BusinessRegistration = () => {
           Submit
         </button>
       </div>
+      <Footer />
     </form>
   );
 };
